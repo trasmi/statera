@@ -7,8 +7,8 @@ import { Icon } from '../lib/icons'
 import { cn } from '../lib/utils'
 
 const COLORS = {
-  light: { primary: '#5846E8', teal: '#19C9B2', mute: '#9AA3C4' },
-  dark: { primary: '#8B7CFF', teal: '#2DD4BF', mute: '#4A5688' },
+  light: { primary: '#06525C', teal: '#2FB5A5', mute: '#9DB8B6' },
+  dark: { primary: '#6FD3C6', teal: '#3AD0BD', mute: '#3F6E72' },
 }
 
 function QNode({ data }) {
@@ -16,7 +16,7 @@ function QNode({ data }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.85, y: 10 }}
-      animate={{ opacity: 1, scale: 1, y: 0, boxShadow: st === 'current' ? ['0 0 0 0 rgba(120,100,255,.45)', '0 0 0 10px rgba(120,100,255,0)'] : '0 0 0 0 rgba(0,0,0,0)' }}
+      animate={{ opacity: 1, scale: 1, y: 0, boxShadow: st === 'current' ? ['0 0 0 0 rgba(6,82,92,.35)', '0 0 0 10px rgba(6,82,92,0)'] : '0 0 0 0 rgba(0,0,0,0)' }}
       transition={{ duration: 0.45, boxShadow: st === 'current' ? { repeat: Infinity, duration: 1.8 } : { duration: 0 } }}
       className={cn(
         'w-[172px] rounded-xl border px-2.5 py-2',
@@ -31,7 +31,7 @@ function QNode({ data }) {
           <Icon name={data.icon} className="size-3.5" />
         </span>
         <div className="min-w-0">
-          <div className="truncate text-[9.5px] font-medium uppercase tracking-wide text-muted-foreground">{data.criterion}</div>
+          <div className="truncate text-[9.5px] font-medium text-muted-foreground">{data.criterion}</div>
           <div className="truncate text-[12.5px] font-semibold text-foreground">{data.answer}</div>
         </div>
       </div>

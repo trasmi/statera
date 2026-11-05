@@ -5,7 +5,7 @@ import { cn } from '../../lib/utils'
 const Progress = React.forwardRef(({ className, value = 0, ...p }, ref) => (
   <ProgressPrimitive.Root ref={ref} value={value} className={cn('relative h-1.5 w-full overflow-hidden rounded-full bg-muted', className)} {...p}>
     <ProgressPrimitive.Indicator asChild>
-      <motion.div className="h-full rounded-full bg-gradient-to-r from-primary to-teal" initial={false} animate={{ width: `${value}%` }} transition={{ type: 'spring', stiffness: 120, damping: 20 }} />
+      <motion.div className="h-full rounded-full bg-primary" initial={false} animate={{ width: `${value}%` }} transition={{ type: 'spring', stiffness: 120, damping: 20 }} />
     </ProgressPrimitive.Indicator>
   </ProgressPrimitive.Root>
 ))

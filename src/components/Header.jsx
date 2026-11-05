@@ -1,4 +1,4 @@
-import { FlaskConical, GraduationCap, Microscope, Moon, RotateCcw, Sun } from 'lucide-react'
+import { GraduationCap, Microscope, Moon, RotateCcw, Sun } from 'lucide-react'
 import { Switch } from './ui/switch'
 import { Button } from './ui/button'
 import { Progress } from './ui/progress'
@@ -18,15 +18,15 @@ export function Header({ teaching, setTeaching, expert, setExpert, theme, toggle
   return (
     <header className="relative z-40 border-b border-border bg-background/85 backdrop-blur-xl lg:sticky lg:top-0">
       <div className="mx-auto flex max-w-[1560px] flex-wrap items-center gap-x-3 gap-y-2.5 px-4 py-3 lg:px-6">
-        <div className="order-1 flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-primary to-[#2E2390] text-white shadow-md dark:from-[#8B7CFF] dark:to-[#4B3CC8]">
-            <FlaskConical className="size-5" aria-hidden="true" />
+        <a href="../" aria-label="Statera, retour à l’accueil" className="order-1 flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          <span className="grid size-9 grid-cols-2 place-items-center gap-0.5 rounded-lg bg-primary p-2" aria-hidden="true">
+            {[0, 1, 2, 3].map((i) => <i key={i} className="size-1.5 rounded-full bg-primary-foreground" />)}
           </span>
           <div className="leading-tight">
-            <div className="text-[17px] font-bold tracking-tight">Statera</div>
-            <div className="hidden text-[12.5px] text-muted-foreground sm:block">Choisissez le bon test statistique, pas à pas · Tijani Rasmi, Université de Lille</div>
+            <div className="text-[18px] font-medium tracking-tight">Statera</div>
+            <div className="hidden text-[13px] text-muted-foreground sm:block">Choisissez le bon test statistique, pas à pas</div>
           </div>
-        </div>
+        </a>
         <div className="order-2 ml-auto flex items-center gap-2 lg:order-3 lg:ml-0">
           <Button variant="outline" size="icon" onClick={toggleTheme} aria-label={theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}>
             {theme === 'dark' ? <Sun /> : <Moon />}

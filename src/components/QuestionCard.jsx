@@ -21,12 +21,12 @@ export function QuestionCard({ node, step, totalMin, totalMax, onAnswer, onBack,
 
   return (
     <Card className="overflow-hidden">
-      <div className="relative border-b border-border bg-gradient-to-br from-soft via-card to-card px-5 pb-5 pt-5 sm:px-7 sm:pt-6">
+      <div className="relative border-b border-border px-5 pb-5 pt-5 sm:px-7 sm:pt-6">
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <Badge><Icon name={node.icon} /> {node.criterion}</Badge>
           <span className="text-xs font-medium text-muted-foreground">Question {step} · {totalMin === totalMax ? totalMin : `${totalMin} à ${totalMax}`} questions au total</span>
         </div>
-        <h2 className="text-balance text-[22px] font-semibold leading-snug tracking-tight sm:text-[26px]">{node.title}</h2>
+        <h2 className="text-balance text-[24px] font-medium leading-tight tracking-[-0.025em] sm:text-[32px]">{node.title}</h2>
         <p className="mt-2 max-w-2xl text-[14.5px] leading-relaxed text-muted-foreground">{node.lead}</p>
       </div>
 
@@ -60,10 +60,10 @@ export function QuestionCard({ node, step, totalMin, totalMax, onAnswer, onBack,
                 whileHover={picked ? undefined : { y: -2 }} whileTap={picked ? undefined : { scale: 0.992 }}
                 className={cn(
                   'group relative flex w-full cursor-pointer items-start gap-4 rounded-2xl border bg-card p-4 text-left shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:p-5',
-                  sel ? 'border-teal bg-teal-soft' : 'border-border hover:border-primary/50 hover:bg-soft/60'
+                  sel ? 'border-primary bg-soft' : 'border-border hover:border-primary/50 hover:bg-soft/60'
                 )}
               >
-                <span className={cn('grid size-11 shrink-0 place-items-center rounded-xl transition-colors', sel ? 'bg-teal text-[#04201C]' : 'bg-soft text-primary group-hover:bg-primary group-hover:text-primary-foreground')}>
+                <span className={cn('grid size-11 shrink-0 place-items-center rounded-xl transition-colors', sel ? 'bg-primary text-primary-foreground' : 'bg-soft text-primary group-hover:bg-primary group-hover:text-primary-foreground')}>
                   {sel ? <Check className="size-5" /> : <Icon name={o.icon} className="size-5" />}
                 </span>
                 <span className="min-w-0 flex-1">
@@ -76,9 +76,9 @@ export function QuestionCard({ node, step, totalMin, totalMax, onAnswer, onBack,
                   )}
                   {expert && (
                     <span className="mt-2.5 flex flex-wrap items-center gap-1.5">
-                      <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Mène à</span>
+                      <span className="text-[12px] font-medium text-muted-foreground">Mène à</span>
                       {cands.map((t) => (
-                        <span key={t} className={cn('inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px]', TESTS[t].family === 'param' ? 'border-primary/30 text-primary' : 'border-amber-ink/40 text-amber-ink')}>
+                        <span key={t} className={cn('inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[12px]', TESTS[t].family === 'param' ? 'border-primary/30 text-primary' : 'border-amber-ink/40 text-amber-ink')}>
                           <span className={cn('size-1.5 rounded-full', TESTS[t].family === 'param' ? 'bg-primary' : 'bg-amber-ink')} />{SHORT[t]}
                         </span>
                       ))}
@@ -107,7 +107,7 @@ export function QuestionCard({ node, step, totalMin, totalMax, onAnswer, onBack,
                 <div className="mb-2 flex items-center gap-2 text-[15px] font-semibold text-teal-ink"><Lightbulb className="size-4" /> {node.help.title}</div>
                 <p className="text-[14.5px] leading-relaxed text-foreground/90">{node.help.body}</p>
                 <div className="mt-3 rounded-xl bg-card/80 p-3.5 text-[14px] leading-relaxed">
-                  <span className="mb-1 block text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Exemple simple</span>
+                  <span className="mb-1 block text-[12px] font-semibold text-muted-foreground">Exemple simple</span>
                   {node.help.example}
                 </div>
                 <p className="mt-3 text-[13.5px] leading-relaxed text-teal-ink"><b>Astuce :</b> {node.help.tip}</p>

@@ -63,10 +63,6 @@ export default function App() {
   return (
     <TooltipProvider delayDuration={150}>
       <div className="relative min-h-screen overflow-x-clip bg-background text-foreground">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[460px] overflow-hidden" aria-hidden="true">
-          <div className="absolute -left-24 -top-40 size-[420px] rounded-full bg-primary/15 blur-3xl" />
-          <div className="absolute -right-20 -top-32 size-[380px] rounded-full bg-teal/15 blur-3xl" />
-        </div>
 
         <Header teaching={teaching} setTeaching={setTeaching} expert={expert} setExpert={setExpert} theme={theme} toggleTheme={toggleTheme} onReset={reset} progress={progress} />
 
@@ -93,8 +89,8 @@ export default function App() {
             </aside>
           </div>
           <footer className="mt-10 flex flex-col items-center justify-between gap-2 border-t border-border pt-5 text-center text-[13px] text-muted-foreground sm:flex-row sm:text-left">
-            <p>Conçu par <b className="font-semibold text-foreground">Tijani Rasmi</b> · Université de Lille</p>
-            <p>Arbre de décision d’après F. Guillemot, Nantes Université (2023), HAL hal-04292194</p>
+            <p>Conçu par <b className="font-semibold text-foreground">Tijani Rasmi</b>, Université de Lille</p>
+            <p>Arbre de décision d’après <a className="underline underline-offset-4 hover:text-foreground" href="https://hal.science/hal-04292194">F. Guillemot, Nantes Université (2023)</a>, CC BY-NC-ND 4.0</p>
           </footer>
         </main>
 
@@ -105,7 +101,7 @@ export default function App() {
                 className={cn('relative flex min-h-12 cursor-pointer flex-col items-center justify-center gap-0.5 rounded-xl text-[11.5px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', tab === id ? 'bg-soft text-primary' : 'text-muted-foreground hover:bg-muted')}>
                 <I className="size-5" aria-hidden="true" />
                 {label}
-                {n > 0 && <span className="absolute right-3 top-1 grid min-w-4 place-items-center rounded-full bg-primary px-1 text-[10px] font-semibold text-primary-foreground">{n}</span>}
+                {n > 0 && <span className="absolute right-3 top-1 grid min-w-4 place-items-center rounded-full bg-primary px-1 text-[12px] font-semibold text-primary-foreground">{n}</span>}
               </button>
             ))}
           </div>

@@ -37,7 +37,7 @@ export function HistoryColumn({ path, current, expert, teaching, theme, onJump }
                         className={cn('group flex w-full cursor-pointer items-start gap-3 rounded-xl p-2 text-left transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', last && 'bg-teal-soft/60')}>
                         <span className={cn('relative z-10 grid size-[30px] shrink-0 place-items-center rounded-full border-2 text-[12px] font-semibold', last ? 'border-teal bg-teal text-[#04201C]' : 'border-primary/40 bg-card text-primary')}>{i + 1}</span>
                         <span className="min-w-0 flex-1">
-                          <span className="block text-[11px] font-medium uppercase tracking-wide text-muted-foreground">{q.criterion}</span>
+                          <span className="block text-[12px] font-medium text-muted-foreground">{q.criterion}</span>
                           <span className="block text-[14px] font-semibold leading-snug">{o.label}</span>
                           {teaching && <span className="mt-1 block text-[12px] leading-snug text-muted-foreground">Notion : {q.concept.title}</span>}
                         </span>

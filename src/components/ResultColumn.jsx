@@ -28,8 +28,8 @@ export function ResultColumn({ path, current, candidates, isLeaf, teaching, expe
           <AnimatePresence mode="wait" initial={false}>
             {isLeaf ? (
               <motion.div key="final" initial={{ opacity: 0, scale: 0.94, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ type: 'spring', stiffness: 220, damping: 20 }}>
-                <div className="rounded-xl bg-gradient-to-br from-primary to-[#3B2FB8] p-4 text-white dark:to-[#5B4BD6]">
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-white/75">Votre test</div>
+                <div className="rounded-xl bg-[#06525C] p-4 text-white dark:bg-[#0F4149]">
+                  <div className="text-[12px] font-semiboldr text-white/75">Votre test</div>
                   <div className="mt-1 text-[19px] font-semibold leading-snug">{final.name}</div>
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     <span className="rounded-full bg-white/15 px-2.5 py-0.5 text-xs font-medium">{final.family === 'param' ? 'Paramétrique' : 'Non paramétrique'}</span>
@@ -63,7 +63,7 @@ export function ResultColumn({ path, current, candidates, isLeaf, teaching, expe
           <LayoutGroup>
             {GROUPS.map((g) => (
               <div key={g.label}>
-                <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">{g.label}</div>
+                <div className="mb-1.5 text-[12px] font-semibold text-muted-foreground">{g.label}</div>
                 <div className="flex flex-wrap gap-1.5">
                   {g.tests.map((t) => {
                     const on = candidates.includes(t)

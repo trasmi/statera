@@ -5,7 +5,8 @@
 - `src/data/tests.js` : les 17 fiches (`TESTS`), codes R / Python / SPSS / Jamovi (version française des menus), noms courts `SHORT`, regroupements `GROUPS`.
 - `src/components/` : `QuestionCard` (question), `HistoryColumn` + `PathFlow` (historique et schéma React Flow), `ResultColumn` (résultat provisoire),
   `Fiche` (fiche finale), `Viz` (illustrations SVG), `Header`, `ui/` (composants shadcn écrits à la main).
-- `src/index.css` : thème (variables clair/sombre : bleu nuit, violet, turquoise).
+- `src/index.css` : thème (variables clair/sombre : papier et sarcelle ; pas de violet).
+- `public/index.html` : page d'accueil statique ; son arbre est généré par `npm run arbre` depuis `src/data/tree.js`. L'application est servie sur `/outil/`.
 - Modes Enseignement et Expert : états dans `App.jsx`, passés aux composants.
 - Pour tester tous les parcours : chaque feuille doit être atteignable (18 chemins pour 17 tests ; l'Anova multifactorielle a deux feuilles).
 - Les contenus statistiques (fiches, seuils, scripts) sont rédigés sans relecture experte : à vérifier avant diffusion.

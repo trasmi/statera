@@ -19,7 +19,7 @@ const stagger = (i) => ({ initial: { opacity: 0, y: 14 }, animate: { opacity: 1,
 function Section({ icon: I, title, children, className }) {
   return (
     <section className={className}>
-      <h3 className="mb-2 flex items-center gap-2 text-[13px] font-semibold uppercase tracking-wide text-muted-foreground"><I className="size-4 text-primary" /> {title}</h3>
+      <h3 className="mb-2 flex items-center gap-2 text-[13px] font-semibold text-muted-foreground"><I className="size-4 text-primary" /> {title}</h3>
       {children}
     </section>
   )
@@ -52,9 +52,7 @@ export function Fiche({ testId, variant, path, teaching, expert, onBack, onReset
 
   return (
     <Card className="overflow-hidden">
-      <div className="relative overflow-hidden bg-[#0B1030] px-5 pb-6 pt-6 text-white sm:px-8 sm:pt-8">
-        <div className="pointer-events-none absolute -right-16 -top-24 size-72 rounded-full bg-primary/50 blur-3xl" aria-hidden="true" />
-        <div className="pointer-events-none absolute -bottom-28 left-1/3 size-64 rounded-full bg-teal/25 blur-3xl" aria-hidden="true" />
+      <div className="relative overflow-hidden bg-[#06525C] px-5 pb-6 dark:bg-[#0F4149] pt-6 text-white sm:px-8 sm:pt-8">
         <motion.div {...stagger(0)} className="relative">
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-teal px-2.5 py-1 text-xs font-semibold text-[#04201C]"><Sparkles className="size-3.5" /> Test recommandé</span>
@@ -64,7 +62,7 @@ export function Fiche({ testId, variant, path, teaching, expert, onBack, onReset
               <span className="flex gap-0.5" aria-hidden="true">{[1, 2, 3].map((d) => <span key={d} className={cn('size-1.5 rounded-full', d <= lvl.dots ? 'bg-teal' : 'bg-white/25')} />)}</span>
             </span>
           </div>
-          <h2 className="text-balance text-[28px] font-bold leading-tight tracking-tight sm:text-[34px]">{t.name}</h2>
+          <h2 className="text-balance text-[28px] font-medium leading-tight tracking-[-0.025em] sm:text-[38px]">{t.name}</h2>
           <p className="mt-1 text-[14px] text-white/70">{t.alias} · {t.group}</p>
           {variant && <p className="mt-3 inline-block rounded-lg bg-white/10 px-3 py-1.5 text-[13px] text-white/90">{variant}</p>}
           <p className="mt-4 max-w-2xl text-[15.5px] leading-relaxed text-white/90">{t.objectif}</p>
@@ -154,8 +152,8 @@ export function Fiche({ testId, variant, path, teaching, expert, onBack, onReset
           </TabsContent>
 
           <TabsContent value="exemples" className="space-y-4">
-            <motion.div {...stagger(0)} className="rounded-2xl bg-gradient-to-br from-primary/90 to-[#3B2FB8] p-5 text-white">
-              <div className="mb-1.5 flex items-center gap-2 text-[12px] font-semibold uppercase tracking-wide text-white/80"><Lightbulb className="size-4" /> Exemple concret</div>
+            <motion.div {...stagger(0)} className="rounded-2xl bg-[#06525C] p-5 text-white dark:bg-[#0F4149]">
+              <div className="mb-1.5 flex items-center gap-2 text-[12px] font-semibold text-white/80"><Lightbulb className="size-4" /> Exemple concret</div>
               <p className="text-[15.5px] leading-relaxed">{t.exemple}</p>
             </motion.div>
             <div className="grid gap-4 md:grid-cols-3">
